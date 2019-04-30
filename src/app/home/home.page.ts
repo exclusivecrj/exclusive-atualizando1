@@ -12,24 +12,29 @@ export class HomePage {
   @ViewChild('email') email;
   @ViewChild('senha') senha;
 
-  constructor(public router : Router,
-              public fire : AngularFireAuth){
+  constructor(public router: Router,
+    public fire: AngularFireAuth) {
   }
 
-  logar(){
- 
-    this.fire.auth.signInWithEmailAndPassword(this.email.value,this.senha.value)
-      .then(()=>{
+  logar() {
+
+    this.fire.auth.signInWithEmailAndPassword(this.email.value, this.senha.value)
+      .then(() => {
         console.log('Logado com sucesso');
-        this.router.navigate(['/list']);
+        this.router.navigate(['/lista-de-clientes']);
       })
-      .catch(()=>{
+      .catch(() => {
         console.log('Login Inválido');
       })
   }
 
-  cadastrar(){
-    console.log('ok')
+  cadastrar() {
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value, this.senha.value)
+      .then(() => {
+        console.log("Cadastrado com sucesso!");
+      }).catch(() => {
+        console.log("Usuário inválido");
+      })
   }
 
 }
