@@ -9,10 +9,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { firebaseConfig } from '../environments/firebase.config';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { ClienteViewPage } from './cliente-view/cliente-view.page';
+import {AngularFireModule } from '@angular/fire';
+import {AngularFireAuth } from 'angularfire2/auth';
+import {AngularFirestoreModule } from 'angularfire2/firestore';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,4 +32,4 @@ import { ClienteViewPage } from './cliente-view/cliente-view.page';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -41,6 +41,16 @@ export class AppComponent {
       title: 'Lista de Mensagens',
       url: '/lista-de-mensagem',
       icon: 'ios-list-box'
+    },
+    {
+      title: 'Nossas Marcas',
+      url: '/nossas-marcas',
+      icon: 'md-list-box'
+    },
+    {
+      title: 'Cadastrar Marcas',
+      url: '/cadastro-marca',
+      icon: ''
     }
   ];
   //cadastro-de-clientes
