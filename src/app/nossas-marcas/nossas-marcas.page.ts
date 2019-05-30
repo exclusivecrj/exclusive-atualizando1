@@ -12,7 +12,7 @@ import { LoadingController } from '@ionic/angular';
 export class NossasMarcasPage implements OnInit {
 
  
-  nossasMarcas: Marcas[];
+  nossasMarcas: Marcas[] = [];
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
 
@@ -25,13 +25,14 @@ export class NossasMarcasPage implements OnInit {
     }
 
     viewMarca(obj: Marcas) {
-      this.router.navigate(['/marcas-view', { 'marcas' : obj.id }]);
+      this.router.navigate(['/marca-view', { 'marcas' : obj.id }]);
   
     }
   
     getList() {
       this.loading();
   
+
       var ref = firebase.firestore().collection("marcas");
       ref.get().then(query => {
         query.forEach(doc => {
@@ -45,7 +46,7 @@ export class NossasMarcasPage implements OnInit {
       });
   
     }
-  
+
     remove(obj: Marcas) {
       var ref = firebase.firestore().collection("marcas");
       ref.doc(obj.id).delete()
@@ -56,7 +57,7 @@ export class NossasMarcasPage implements OnInit {
           console.log('Erro ao atualizar');
         })
     }
-  
+      
     async loading() {
       const loading = await this.loadingController.create({
         message: 'Carregando',
@@ -64,4 +65,4 @@ export class NossasMarcasPage implements OnInit {
       });
       await loading.present();
     } 
-  }
+  } 

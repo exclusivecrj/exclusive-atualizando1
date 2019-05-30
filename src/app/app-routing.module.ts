@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'cadastro-de-mensagem', loadChildren: './cadastro-de-mensagem/cadastro-de-mensagem.module#CadastroDeMensagemPageModule' },
   { path: 'mensagem-view', loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },
   { path: 'nossas-marcas', loadChildren: './nossas-marcas/nossas-marcas.module#NossasMarcasPageModule' },
-  { path: 'cadastro-marca', loadChildren: './cadastro-marca/cadastro-marca.module#CadastroMarcaPageModule' }
+  { path: 'cadastro-marca', loadChildren: './cadastro-marca/cadastro-marca.module#CadastroMarcaPageModule' },
+  { path: 'marca-view', loadChildren: './marca-view/marca-view.module#MarcaViewPageModule' }
 
 
 

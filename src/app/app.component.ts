@@ -50,8 +50,8 @@ export class AppComponent {
     {
       title: 'Cadastrar Marcas',
       url: '/cadastro-marca',
-      icon: ''
-    }
+      icon: 'md-add-circle'
+    },
   ];
   //cadastro-de-clientes
 
