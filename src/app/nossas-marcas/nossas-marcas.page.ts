@@ -47,7 +47,7 @@ export class NossasMarcasPage implements OnInit {
   
     }
 
-    remove(obj: Marcas) {
+    remove(obj: marcas) {
       var ref = firebase.firestore().collection("marcas");
       ref.doc(obj.id).delete()
         .then(() => {
