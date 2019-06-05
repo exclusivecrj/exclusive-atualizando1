@@ -23,7 +23,10 @@ const routes: Routes = [
   { path: 'mensagem-view', loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },
   { path: 'nossas-marcas', loadChildren: './nossas-marcas/nossas-marcas.module#NossasMarcasPageModule' },
   { path: 'cadastro-marca', loadChildren: './cadastro-marca/cadastro-marca.module#CadastroMarcaPageModule' },
-  { path: 'marca-view', loadChildren: './marca-view/marca-view.module#MarcaViewPageModule' }
+  { path: 'marca-view', loadChildren: './marca-view/marca-view.module#MarcaViewPageModule' },
+  { path: 'quem', loadChildren: './quem/quem.module#QuemPageModule' },
+  { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
+  { path: 'finaliza-compra', loadChildren: './finaliza-compra/finaliza-compra.module#FinalizaCompraPageModule' }
 
 
 
