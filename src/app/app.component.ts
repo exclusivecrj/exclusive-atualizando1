@@ -57,6 +57,16 @@ export class AppComponent {
       url: '/quem',
       icon: 'md-contacts'
     },
+    {
+      title: 'Cadastrar Roupa',
+      url: '/cadastrar-roupa',
+      icon: 'md-contacts'
+    },
+    {
+      title: 'Roupas',
+      url: '/roupas',
+      icon: 'md-contacts'
+    },
     
   ];
   //cadastro-de-clientes

@@ -9,7 +9,21 @@ export class InicioPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {  
+  }
+
+
+  slideOpts = {
+    initialSlide:0,
+    speed: 20,
+    autoplay:true,
+    loop: true,
+    slidesPerView: 1,
+     
+  };
+
+  gerar(){
+    
   }
 
 }
