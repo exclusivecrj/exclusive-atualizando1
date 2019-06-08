@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,23 @@ export class HomePage {
   @ViewChild('email') email;
   @ViewChild('senha') senha;
 
+  @ViewChild(IonSlides) slides: IonSlides;
+
   constructor(public router: Router,
     public fire: AngularFireAuth) {
+  }
+
+  slideOpts = {
+    initialSlide: 1,
+    speed: 500
+  };
+
+  proximo(){
+    this.slides.slideNext();
+  }
+
+  anterior(){
+    this.slides.slidePrev();
   }
 
   logar() {
@@ -38,3 +54,4 @@ export class HomePage {
   }
 
 }
+

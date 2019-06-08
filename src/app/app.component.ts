@@ -60,12 +60,12 @@ export class AppComponent {
     {
       title: 'Cadastrar Roupa',
       url: '/cadastrar-roupa',
-      icon: 'md-contacts'
+      icon: 'md-add-circle'
     },
     {
       title: 'Roupas',
       url: '/roupas',
-      icon: 'md-contacts'
+      icon: 'body'
     },
     
   ];

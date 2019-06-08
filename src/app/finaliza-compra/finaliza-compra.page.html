@@ -4,182 +4,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-grid>
-        <ion-row>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="6">
-            ion-col [size="6"]
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="3">
-            ion-col [size="3"]
-          </ion-col>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col size="3">
-            ion-col [size="3"]
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="3">
-            ion-col [size="3"]
-          </ion-col>
-          <ion-col size="3" offset="3">
-            ion-col [size="3"] [offset="3"]
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col>
-            ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-            <br>#
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col align-self-start>
-            ion-col [start]
-          </ion-col>
-          <ion-col align-self-center>
-            ion-col [center]
-          </ion-col>
-          <ion-col align-self-end>
-            ion-col [end]
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-          </ion-col>
-        </ion-row>
-      
-        <ion-row align-items-start>
-          <ion-col>
-            [start] ion-col
-          </ion-col>
-          <ion-col>
-            [start] ion-col
-          </ion-col>
-          <ion-col align-self-end>
-            [start] ion-col [end]
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-          </ion-col>
-        </ion-row>
-      
-        <ion-row align-items-center>
-          <ion-col>
-            [center] ion-col
-          </ion-col>
-          <ion-col>
-            [center] ion-col
-          </ion-col>
-          <ion-col>
-            [center] ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-          </ion-col>
-        </ion-row>
-      
-        <ion-row align-items-end>
-          <ion-col>
-            [end] ion-col
-          </ion-col>
-          <ion-col align-self-start>
-            [end] ion-col [start]
-          </ion-col>
-          <ion-col>
-            [end] ion-col
-          </ion-col>
-          <ion-col>
-            ion-col
-            <br>#
-            <br>#
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="12" size-sm>
-            ion-col [size="12"] [size-sm]
-          </ion-col>
-          <ion-col size="12" size-sm>
-            ion-col [size="12"] [size-sm]
-          </ion-col>
-          <ion-col size="12" size-sm>
-            ion-col [size="12"] [size-sm]
-          </ion-col>
-          <ion-col size="12" size-sm>
-            ion-col [size="12"] [size-sm]
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="12" size-md>
-            ion-col [size="12"] [size-md]
-          </ion-col>
-          <ion-col size="12" size-md>
-            ion-col [size="12"] [size-md]
-          </ion-col>
-          <ion-col size="12" size-md>
-            ion-col [size="12"] [size-md]
-          </ion-col>
-          <ion-col size="12" size-md>
-            ion-col [size="12"] [size-md]
-          </ion-col>
-        </ion-row>
-      
-        <ion-row>
-          <ion-col size="6" size-lg offset="3">
-            ion-col [size="6"] [size-lg] [offset="3"]
-          </ion-col>
-          <ion-col size="3" size-lg>
-            ion-col [size="3"] [size-lg]
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Nome Completo</ion-label>
+        <ion-input #email></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">RG</ion-label>
+        <ion-input #senha></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">CPF</ion-label>
+        <ion-input #senha></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input #senha></ion-input>
+      </ion-item>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calcule aqui o seu frete!</ion-card-title>
+      <ion-item>
+        <ion-label position="floating">CEP</ion-label>
+        <ion-input #senha></ion-input>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="tertiary" (click)="cadastrar()">Calcular</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-label position="floating">Valor total da compra:3000</ion-label>
+        <ion-input #email></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Número do pedido: 84</ion-label>
+        <ion-input #senha></ion-input>
+      </ion-item>
+
+    </ion-card-header>
+    <ion-card-content>
+      Entrega estimada para até 3 dias úteis!!
+    </ion-card-content>
+    <ion-button expand="full" color="tertiary" (click)="cadastrar()">Finalizar compra</ion-button>
+
+  </ion-card>
+
 </ion-content>
