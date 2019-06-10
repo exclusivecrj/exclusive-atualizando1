@@ -3,82 +3,35 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista De Roupas</ion-title>
+    <ion-title>Carrinho</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="cart"></ion-icon>
-      <ion-badge color="primary">{{pedido.itens.length}}</ion-badge>
-    </ion-fab-button>
-  </ion-fab>
-
   <ion-row>
     <ion-col align-self-center text-center>
-      <ion-card *ngFor="let roupas of listaDeRoupas">
+      <ion-card *ngFor="let pedido of pedido.itens">
         <div>
-          <img width="100%" src="{{roupas?.imagem}}">
+          <img width="100%" src="{{pedido?.imagem}}">
         </div>
         <ion-card-header>
-          <ion-card-title> {{roupas?.roupa}} </ion-card-title>
-          <ion-card-subtitle> {{roupas?.preco}} </ion-card-subtitle>
-          <ion-card-subtitle> {{roupas?.marca}} </ion-card-subtitle>
+          <ion-card-title> {{pedido?.roupas.roupa}} </ion-card-title>
+          <ion-card-subtitle>R$ {{pedido?.roupas.preco}} </ion-card-subtitle>
+          <ion-card-subtitle> {{pedido?.roupas.marca}} </ion-card-subtitle>
         </ion-card-header>
-
-
-
-        <ion-button expand="full" color="tertiary" (click)="addCarrinho(roupas)">Comprar</ion-button>
-
         <ion-card-content>
-          <button type="button" class="btn btn-danger" (click)="remove(roupas)" size="large">Excluir</button>
-          <br>
-          <br>
+          
+          <ion-button (click)="addCarrinho(roupas)">
+            <ion-icon name="cart">Comprar</ion-icon>
+          </ion-button>
+          <ion-button (click)="removeCar(pedido?.roupas)">
+              <ion-icon name="close" >Remover</ion-icon>
+          </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>
   </ion-row>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

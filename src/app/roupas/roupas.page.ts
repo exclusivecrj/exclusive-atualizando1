@@ -18,12 +18,15 @@ export class RoupasPage implements OnInit {
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
 
-  pedido: Pedido;
+  pedido: Pedido = new Pedido();
 
   constructor(public router: Router,
     public loadingController: LoadingController,
     public toastController: ToastController,
     public storageServ: StorageService) {
+    console.log(this.pedido);
+
+    this.pedido = this.storageServ.getCart()
 
   }
 
@@ -83,21 +86,29 @@ export class RoupasPage implements OnInit {
 
   addCarrinho(roupas: roupas) {
     this.pedido = this.storageServ.getCart();
+    let add = true;
 
     let i = new Item();
     i.roupas = roupas;
     i.quantidade = 1;
 
-   
-    if(this.pedido==null){
+
+    if (this.pedido == null) {
       this.pedido = new Pedido();
       this.pedido.itens = [];
     }
 
-    this.pedido.itens.push(i);
-    this.storageServ.setCart(this.pedido);
+    this.pedido.itens.forEach(p => {
+      if (p.roupas.id = roupas.id) {
+        add = false;
+      }
 
-    console.log(localStorage.getItem("carrinho"));
-  }
+      if (add == true) this.pedido.itens.push(i);
+
+      this.pedido.itens.push(i);
+      this.storageServ.setCart(this.pedido);
+      console.log(this.pedido);
+    })
+ }
 
 }

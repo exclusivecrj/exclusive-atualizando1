@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
   { path: 'finaliza-compra', loadChildren: './finaliza-compra/finaliza-compra.module#FinalizaCompraPageModule' },
   { path: 'cadastrar-roupa', loadChildren: './cadastrar-roupa/cadastrar-roupa.module#CadastrarRoupaPageModule' },
-  { path: 'roupas', loadChildren: './roupas/roupas.module#RoupasPageModule' }
+  { path: 'roupas', loadChildren: './roupas/roupas.module#RoupasPageModule' },
+  { path: 'carrinho', loadChildren: './carrinho/carrinho.module#CarrinhoPageModule' }
 
 
 

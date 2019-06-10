@@ -67,6 +67,11 @@ export class AppComponent {
       url: '/roupas',
       icon: 'body'
     },
+    {
+      title: 'Carrinho',
+      url: '/carrinho',
+      icon: 'md-cart'
+    },
     
   ];
   //cadastro-de-clientes
