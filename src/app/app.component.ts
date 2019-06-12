@@ -18,29 +18,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Logoff',
-      url: '/logoff',
-      icon: 'ios-log-out'
-    },
-    {
-      title: 'Lista de Clientes',
-      url: '/lista-de-clientes',
-      icon: 'body'
-    },
-    {
-      title: 'Cadastro de Clientes',
-      url: '/cadastro-de-cliente',
-      icon: 'book'
-    },
-    {
-      title: 'Cadastro de Mensagens',
-      url: '/cadastro-de-mensagem',
-      icon: 'ios-mail'
-    },
-    {
-      title: 'Lista de Mensagens',
-      url: '/lista-de-mensagem',
-      icon: 'ios-list-box'
+      title: 'Roupas',
+      url: '/roupas',
+      icon: 'shirt'
     },
     {
       title: 'Nossas Marcas',
@@ -48,30 +28,41 @@ export class AppComponent {
       icon: 'md-list-box'
     },
     {
-      title: 'Cadastrar Marcas',
-      url: '/cadastro-marca',
+      title: 'Carrinho',
+      url: '/carrinho',
+      icon: 'md-cart'
+    },
+    {
+      title: 'Lista de Clientes',
+      url: '/lista-de-clientes',
+      icon: 'list'
+    },
+    {
+      title: 'Cadastro de Clientes',
+      url: '/cadastro-de-cliente',
       icon: 'md-add-circle'
     },
     {
-      title: 'Quem Somos',
-      url: '/quem',
-      icon: 'md-contacts'
-    },
+      title: 'Cadastrar Marcas',
+      url: '/cadastro-marca',
+      icon: 'md-add-circle'
+    }, 
     {
       title: 'Cadastrar Roupa',
       url: '/cadastrar-roupa',
       icon: 'md-add-circle'
     },
     {
-      title: 'Roupas',
-      url: '/roupas',
-      icon: 'body'
-    },
+      title: 'Quem Somos',
+      url: '/quem',
+      icon: 'md-contacts'
+    },    
     {
-      title: 'Carrinho',
-      url: '/carrinho',
-      icon: 'md-cart'
+      title: 'Logoff',
+      url: '/logoff',
+      icon: 'ios-log-out'
     },
+
     
   ];
   //cadastro-de-clientes

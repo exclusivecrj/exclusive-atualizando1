@@ -12,7 +12,7 @@
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="cart"></ion-icon>
-      <ion-badge color="primary">{{pedido.itens.length}}</ion-badge>
+      <ion-badge color="primary"  *ngIf="pedido != null">{{pedido.itens.length}}</ion-badge>
     </ion-fab-button>
   </ion-fab>
 
@@ -20,7 +20,7 @@
     <ion-col align-self-center text-center>
       <ion-card *ngFor="let roupas of listaDeRoupas">
         <div>
-          <img width="100%" src="{{roupas?.imagem}}">
+            <img width="80%" src="{{imagem}}">
         </div>
         <ion-card-header>
           <ion-card-title> {{roupas?.roupa}} </ion-card-title>
@@ -30,13 +30,13 @@
 
 
 
-        <ion-button expand="full" color="tertiary" (click)="addCarrinho(roupas)">Comprar</ion-button>
-
-        <ion-card-content>
-          <button type="button" class="btn btn-danger" (click)="remove(roupas)" size="large">Excluir</button>
-          <br>
-          <br>
-        </ion-card-content>
+        <ion-button color="tertiary" (click)="addCarrinho(roupas)">
+            <ion-icon name="add"></ion-icon> Adicionar ao carrinho
+        </ion-button>
+        <ion-button color="danger" (click)="addCarrinho(roupas)">
+            <ion-icon name="trash"></ion-icon>Excluir
+        </ion-button>
+        <br>
       </ion-card>
     </ion-col>
   </ion-row>

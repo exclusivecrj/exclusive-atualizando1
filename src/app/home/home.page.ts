@@ -13,6 +13,9 @@ export class HomePage {
   @ViewChild('email') email;
   @ViewChild('senha') senha;
 
+  @ViewChild('email2') email2;
+  @ViewChild('senha2') senha2;
+
   @ViewChild(IonSlides) slides: IonSlides;
 
   constructor(public router: Router,
@@ -33,8 +36,7 @@ export class HomePage {
   }
 
   logar() {
-
-    this.fire.auth.signInWithEmailAndPassword(this.email.value, this.senha.value)
+    this.fire.auth.signInWithEmailAndPassword(this.email2.value, this.senha2.value)
       .then(() => {
         console.log('Logado com sucesso');
         this.router.navigate(['/nossas-marcas']);

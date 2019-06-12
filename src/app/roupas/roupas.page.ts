@@ -14,8 +14,10 @@ import { Item } from '../model/item';
 })
 export class RoupasPage implements OnInit {
 
+  roupas: roupas = new roupas();
   listaDeRoupas: roupas[] = [];
   firestore = firebase.firestore();
+  imagem;
   settings = { timestampsInSnapshots: true };
 
   pedido: Pedido = new Pedido();
@@ -25,9 +27,14 @@ export class RoupasPage implements OnInit {
     public toastController: ToastController,
     public storageServ: StorageService) {
     console.log(this.pedido);
-
-    this.pedido = this.storageServ.getCart()
-
+    
+      if(this.storageServ.getCart()==null){
+        this.pedido = this.storageServ.getCart()
+      }else{
+        this.pedido.itens = [];
+      }
+    
+    
   }
 
 
@@ -92,6 +99,8 @@ export class RoupasPage implements OnInit {
     i.roupas = roupas;
     i.quantidade = 1;
 
+    console.log(roupas);
+
 
     if (this.pedido == null) {
       this.pedido = new Pedido();
@@ -99,16 +108,27 @@ export class RoupasPage implements OnInit {
     }
 
     this.pedido.itens.forEach(p => {
-      if (p.roupas.id = roupas.id) {
+      if (p.roupas.id == roupas.id) {
         add = false;
       }
 
-      if (add == true) this.pedido.itens.push(i);
-
-      this.pedido.itens.push(i);
-      this.storageServ.setCart(this.pedido);
-      console.log(this.pedido);
+     
     })
+
+    if (add == true) this.pedido.itens.push(i);
+
+    
+    this.storageServ.setCart(this.pedido);
+    console.log(this.pedido);
  }
+
+ downloadFoto() {
+  let ref = firebase.storage().ref()
+    .child(`pratos/${this.roupas.id}.jpg`);
+
+  ref.getDownloadURL().then(url => {
+    this.imagem = url;
+  })
+}
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quem',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuemPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router,
+    public loadingController : LoadingController) { }
 
   ngOnInit() {
   }
+
+  insta(){
+    this.router.navigate(['https://www.instagram.com/exclusiveclothingrj/']);
+  }
+  git(){
+    
+  }
+  tt(){
+    
+  }
+  face(){
+    
+  }
+  email(){
+    
+  }
+  linkedin(){
+    
+  }
+
 
 }
