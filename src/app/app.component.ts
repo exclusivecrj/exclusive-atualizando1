@@ -62,7 +62,6 @@ export class AppComponent {
       url: '/logoff',
       icon: 'ios-log-out'
     },
-
     
   ];
   //cadastro-de-clientes
@@ -93,7 +92,7 @@ export class AppComponent {
           }
       },
       () => {
-        this.router.navigate(['/lista-de-clientes']);
+        this.router.navigate(['/roupas']);
       }
     );
 

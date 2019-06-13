@@ -63,7 +63,7 @@ export class CadastrarRoupaPage implements OnInit {
     let ref = this.firestore.collection('roupas')
     ref.add(this.formGroup.value)
       .then(() =>{
-        this.toast('Cadastrado com sucesso');
+        this.toast('Roupa Cadastrada com sucesso');
         this.router.navigate(['/roupas']);
         this.loadingController.dismiss();
       }).catch(()=>{
@@ -75,8 +75,7 @@ export class CadastrarRoupaPage implements OnInit {
   enviaArquivo(event){
     let imagem = event.srcElement.files[0];
     //console.log(imagem.name);
-    let ref = firebase.storage().ref()
-                  .child(`roupas/${this.roupas.id}.jpg`);
+    let ref = firebase.storage().ref().child(`roupas/${this.roupas.id}.jpg`);
     
     ref.put(imagem).then(url=>{
       console.log("Enviado com sucesso!");

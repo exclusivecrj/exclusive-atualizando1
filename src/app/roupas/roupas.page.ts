@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { roupas } from '../model/roupas';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController, IonInfiniteScroll } from '@ionic/angular';
 import { Pedido } from '../model/pedido';
 import { StorageService } from '../service/storage.service';
 import { Item } from '../model/item';
+import { ViewChild } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-roupas',
@@ -13,6 +16,8 @@ import { Item } from '../model/item';
   styleUrls: ['./roupas.page.scss'],
 })
 export class RoupasPage implements OnInit {
+
+  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   roupas: roupas = new roupas();
   listaDeRoupas: roupas[] = [];
@@ -35,6 +40,23 @@ export class RoupasPage implements OnInit {
       }
     
     
+  }
+
+  loadData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      if (this.loadData.length == 1000) {
+        event.target.disabled = true;
+      }
+    }, 500);
+  }
+
+  toggleInfiniteScroll() {
+    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 
 
