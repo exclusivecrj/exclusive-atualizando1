@@ -63,7 +63,8 @@ const routes: Routes = [
   { 
     path: 'carrinho',
     loadChildren: './carrinho/carrinho.module#CarrinhoPageModule' 
-  }
+  },  { path: 'roupa-view', loadChildren: './roupa-view/roupa-view.module#RoupaViewPageModule' }
+
 
 
 

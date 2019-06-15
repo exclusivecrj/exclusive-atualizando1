@@ -66,6 +66,7 @@ export class CadastrarRoupaPage implements OnInit {
         this.toast('Roupa Cadastrada com sucesso');
         this.router.navigate(['/roupas']);
         this.loadingController.dismiss();
+        // console.log(getList{{marcas.nome}});
       }).catch(()=>{
         this.toast("Erro ao Cadastrar!");
         this.loadingController.dismiss();

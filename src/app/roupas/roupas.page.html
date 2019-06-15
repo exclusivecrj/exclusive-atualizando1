@@ -20,7 +20,7 @@
     <ion-col align-self-center text-center>
       <ion-card *ngFor="let roupas of listaDeRoupas">
         <div>
-            <img width="80%" src="{{imagem}}">
+            <img width="80%" src="{{roupas?.img}}">
         </div>
         <ion-card-header>
           <ion-card-title> {{roupas?.roupa}} </ion-card-title>
@@ -36,6 +36,9 @@
         <ion-button color="danger" (click)="addCarrinho(roupas)">
             <ion-icon name="trash"></ion-icon>Excluir
         </ion-button>
+        <ion-button color="danger" (click)="viewRoupa(roupas)">
+          <ion-icon name="cloud-upload"></ion-icon>atualizar
+      </ion-button>
         <br>
       </ion-card>
     </ion-col>

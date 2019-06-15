@@ -89,7 +89,16 @@ export class RoupasPage implements OnInit {
         let r = new roupas();
         r.setDados(doc.data());
         r.id = doc.id;
-        this.listaDeRoupas.push(r);
+
+        let ref = firebase.storage().ref().child(`roupas/${doc.id}.jpg`).getDownloadURL().then(url => {
+          r.img = url;
+
+          this.listaDeRoupas.push(r);
+        }).catch(err=>{
+          this.listaDeRoupas.push(r);
+        })
+        
+
       });
       this.loadingController.dismiss();
 
@@ -97,7 +106,7 @@ export class RoupasPage implements OnInit {
 
   }
 
-  viewClienteRoupa(obj: roupas) {
+  viewRoupa(obj: roupas) {
     this.router.navigate(['/roupa-view', { 'roupas': obj.id }]);
 
   }
@@ -152,5 +161,4 @@ export class RoupasPage implements OnInit {
     this.imagem = url;
   })
 }
-
 }

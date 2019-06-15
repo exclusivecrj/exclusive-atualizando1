@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RoupasPage } from './roupas.page';
+import { RoupaViewPage } from './roupa-view.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: RoupasPage
+    component: RoupaViewPage
   }
 ];
 
@@ -22,6 +22,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RoupasPage]
+  declarations: [RoupaViewPage]
 })
-export class RoupasPageModule {}
+export class RoupaViewPageModule {}
