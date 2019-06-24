@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Marcas } from '../model/marcas';
 import * as firebase from 'firebase';
-import { Router } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-marca-view',
-  templateUrl: './marca-view.page.html',
-  styleUrls: ['./marca-view.page.scss'],
+  selector: 'app-forever',
+  templateUrl: './forever.page.html',
+  styleUrls: ['./forever.page.scss'],
 })
-export class MarcaViewPage implements OnInit {
+export class ForeverPage implements OnInit {
 
   marcas: Marcas = new Marcas();
   id: string;
@@ -71,4 +71,3 @@ export class MarcaViewPage implements OnInit {
   }
 
 }
-

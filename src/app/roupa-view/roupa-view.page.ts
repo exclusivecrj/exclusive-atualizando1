@@ -36,7 +36,8 @@ export class RoupaViewPage implements OnInit {
       preco: [this.roupas.preco],
       modelo: [this.roupas.modelo],
       marca: [this.roupas.marca],
-      img: [this.roupas.img]
+      img: [this.roupas.img],
+      cor: [this.roupas.cor],
     });
   }
 
@@ -69,7 +70,7 @@ export class RoupaViewPage implements OnInit {
   async loading() {
     const loading = await this.loadingController.create({
       message: 'Carregando',
-      duration: 5000
+      duration: 1000
     });
     await loading.present();
   }
@@ -78,7 +79,7 @@ export class RoupaViewPage implements OnInit {
     let imagem = event.srcElement.files[0];
     //console.log(imagem.name);
     let ref = firebase.storage().ref().child(`roupas/${this.id}.jpg`);
-    
+  
     ref.put(imagem).then(url=>{
       console.log("Enviado com sucesso!");
       this.downloadFoto();

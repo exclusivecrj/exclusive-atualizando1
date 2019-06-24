@@ -48,7 +48,7 @@ export class CadastroDeClientePage implements OnInit {
   async loading() {
     const loading = await this.loadingController.create({
       message: 'Carregando',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
   }

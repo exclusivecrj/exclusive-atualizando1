@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import * as firebase from 'firebase';
 import { roupas } from '../model/roupas';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
@@ -18,20 +18,24 @@ export class CadastrarRoupaPage implements OnInit {
   formGroup : FormGroup; 
 
   roupas: roupas = new roupas();
-
+  id: string;
   imagem : string = "";
 
   constructor(public formBuilder : FormBuilder,
     public router : Router,
     public loadingController : LoadingController,
-    public toastController : ToastController) {
+    public toastController : ToastController,
+    public activateRoute: ActivatedRoute,) {
+
+      this.id = this.activateRoute.snapshot.paramMap.get('roupas');
             
       this.formGroup = this.formBuilder.group({
       roupa : [''],
       preco : [''],
       modelo : [''],
       marca : [''],
-      img : [''],
+      img : [this.roupas.img],
+      cor : [''],
       
     }) }
 
@@ -45,7 +49,7 @@ export class CadastrarRoupaPage implements OnInit {
   async loading() {
     const loading = await this.loadingController.create({
       message: 'Carregando',
-      duration: 2000
+      duration: 1000
     });
     await loading.present();
   }
@@ -76,8 +80,8 @@ export class CadastrarRoupaPage implements OnInit {
   enviaArquivo(event){
     let imagem = event.srcElement.files[0];
     //console.log(imagem.name);
-    let ref = firebase.storage().ref().child(`roupas/${this.roupas.id}.jpg`);
-    
+    let ref = firebase.storage().ref().child(`roupas/${this.id}.jpg`);
+  
     ref.put(imagem).then(url=>{
       console.log("Enviado com sucesso!");
       this.downloadFoto();

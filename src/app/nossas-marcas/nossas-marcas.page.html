@@ -56,7 +56,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="lacoste(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -83,7 +83,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="adidas(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -110,7 +110,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="mtCat(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -136,7 +136,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="calvinKlein(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -162,7 +162,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="nike(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -176,7 +176,7 @@
     <ion-col align-self-center text-center>
       <ion-card *ngFor="let marcas of nossasMarcas">
         <div>
-          <img width="75%" src="assets/img/oak.jpg">
+          <img width="75%" src="data:image/png;base64,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">
         </div>
         <ion-card-header>
           <ion-card-title>Oakley</ion-card-title>
@@ -188,7 +188,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="oaklay(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -214,7 +214,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="forever(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>
@@ -241,7 +241,7 @@
         </ion-card-content>
         <ion-row>
           <ion-col offset="2" size="4" align-self-center text-center>
-            <button type="button" class="btn btn-info" (click)="viewMarca(marcas)" size="large">Ver mais</button>
+            <button type="button" class="btn btn-info" (click)="zara(marcas)" size="large">Ver mais</button>
           </ion-col>
           <ion-col size="4" align-self-center text-center>
             <button type="button" class="btn btn-danger" (click)="remove(marcas)" size="large">Excluir</button>

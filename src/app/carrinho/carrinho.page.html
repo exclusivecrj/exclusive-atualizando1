@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>
+        <ion-icon name="cart" class="cart"></ion-icon>
+      </ion-menu-button>
     </ion-buttons>
     <ion-title>Carrinho</ion-title>
   </ion-toolbar>
@@ -16,25 +18,57 @@
           <img width="100%" src="{{pedido?.imagem}}">
         </div>
         <ion-card-header>
-          <ion-card-title> {{pedido?.roupas.roupa}} </ion-card-title>
-          <ion-card-subtitle>R$ {{pedido?.roupas.preco}} </ion-card-subtitle>
-          <ion-card-subtitle> {{pedido?.roupas.marca}} </ion-card-subtitle>
+          <h5> {{pedido?.roupas.roupa}} </h5>
+          <p> R$ {{pedido?.roupas.preco}} </p>
         </ion-card-header>
         <ion-card-content>
-          
+
           <ion-button (click)="addCarrinho(roupas)">
             <ion-icon name="cart">Comprar</ion-icon>
           </ion-button>
           <ion-button (click)="removeCar(pedido?.roupas)">
-              <ion-icon name="close" >Remover</ion-icon>
+            <ion-icon name="close">Remover</ion-icon>
           </ion-button>
         </ion-card-content>
       </ion-card>
     </ion-col>
-    <ion-button color="tertiary" outline>
-      <ion-icon name="cart">
-
-      </ion-icon>
-    </ion-button>
   </ion-row>
+
+  <ion-fab class="contat" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list class="teste" side="start">
+
+      <ion-fab-button class="btn" (click)="logout()">
+        <ion-icon class="img" name="log-out"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button class="btn" (click)="search()">
+        <ion-icon class="img" name="search"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button class="btn" (click)="contact()">
+        <ion-icon class="img" name="contact"></ion-icon>
+      </ion-fab-button>
+
+<!--      <ion-router>
+        <ion-route url="/carrinho" component="CarrinhoPage"></ion-route> -->
+        <ion-fab-button class="btn" (click)="cart()">
+          <ion-icon class="img" name="cart"></ion-icon>
+        </ion-fab-button>
+<!--      </ion-router> -->
+
+    </ion-fab-list>
+  </ion-fab>
+
+
 </ion-content>
+
+<!--
+  
+slot="start" 
+
+slot="end"
+
+-->

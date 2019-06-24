@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { roupas } from '../model/roupas';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController, IonInfiniteScroll } from '@ionic/angular';
+import { LoadingController, ToastController, IonInfiniteScroll, PopoverController } from '@ionic/angular';
 import { Pedido } from '../model/pedido';
 import { StorageService } from '../service/storage.service';
 import { Item } from '../model/item';
@@ -30,16 +30,17 @@ export class RoupasPage implements OnInit {
   constructor(public router: Router,
     public loadingController: LoadingController,
     public toastController: ToastController,
-    public storageServ: StorageService) {
+    public storageServ: StorageService,
+    public popoverController: PopoverController) {
     console.log(this.pedido);
-    
-      if(this.storageServ.getCart()==null){
-        this.pedido = this.storageServ.getCart()
-      }else{
-        this.pedido.itens = [];
-      }
-    
-    
+
+    if (this.storageServ.getCart() == null) {
+      this.pedido = this.storageServ.getCart()
+    } else {
+      this.pedido.itens = [];
+    }
+
+
   }
 
   loadData(event) {
@@ -94,10 +95,10 @@ export class RoupasPage implements OnInit {
           r.img = url;
 
           this.listaDeRoupas.push(r);
-        }).catch(err=>{
+        }).catch(err => {
           this.listaDeRoupas.push(r);
         })
-        
+
 
       });
       this.loadingController.dismiss();
@@ -108,7 +109,6 @@ export class RoupasPage implements OnInit {
 
   viewRoupa(obj: roupas) {
     this.router.navigate(['/roupa-view', { 'roupas': obj.id }]);
-
   }
 
   remove(obj: roupas) {
@@ -143,22 +143,42 @@ export class RoupasPage implements OnInit {
         add = false;
       }
 
-     
+
     })
 
     if (add == true) this.pedido.itens.push(i);
 
-    
+
     this.storageServ.setCart(this.pedido);
     console.log(this.pedido);
- }
+  }
 
- downloadFoto() {
-  let ref = firebase.storage().ref()
-    .child(`pratos/${this.roupas.id}.jpg`);
+  downloadFoto() {
+    let ref = firebase.storage().ref()
+      .child(`roupas/${this.roupas.id}.jpg`);
 
-  ref.getDownloadURL().then(url => {
-    this.imagem = url;
-  })
-}
+    ref.getDownloadURL().then(url => {
+      this.imagem = url;
+    })
+  }
+
+  filter() {
+    
+  }
+
+
+  
+  async presentPopover() {
+    const popoverController = document.querySelector('ion-popover-controller');
+    await popoverController.componentOnReady();
+  
+    const popoverElement = await popoverController.create({
+      component: 'profile-page',
+      event: event
+    });
+    return await popoverElement.present();
+  }
+
+  // function
+
 }

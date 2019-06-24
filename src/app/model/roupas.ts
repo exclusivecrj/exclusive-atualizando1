@@ -5,6 +5,7 @@ export class roupas{
     preco: string;
     modelo: string;
     marca: string;
+    cor: string;
     img: string;
 
     constructor(){
@@ -16,6 +17,7 @@ export class roupas{
         this.preco = obj.preco;
         this.modelo = obj.modelo;
         this.marca = obj.marca;
+        this.cor = obj.cor;
         this.img = obj.img;
     }
 }

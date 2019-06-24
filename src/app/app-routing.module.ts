@@ -12,58 +12,94 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  { path: 'logoff', 
+  {
+    path: 'logoff',
     loadChildren: './logoff/logoff.module#LogoffPageModule',
-    canActivate: [Auth2Guard] 
+    canActivate: [Auth2Guard]
   },
-  { 
-    path: 'lista-de-clientes', 
-    loadChildren: './lista-de-clientes/lista-de-clientes.module#ListaDeClientesPageModule' 
+  {
+    path: 'lista-de-clientes',
+    loadChildren: './lista-de-clientes/lista-de-clientes.module#ListaDeClientesPageModule'
   },
-  { 
-    path: 'cadastro-de-cliente', 
-    loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' 
+  {
+    path: 'cadastro-de-cliente',
+    loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule'
   },
-  { 
-    path: 'cliente-view', 
-    loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' 
+  {
+    path: 'cliente-view',
+    loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule'
   },
-  { 
-    path: 'nossas-marcas', 
-    loadChildren: './nossas-marcas/nossas-marcas.module#NossasMarcasPageModule' 
+  {
+    path: 'nossas-marcas',
+    loadChildren: './nossas-marcas/nossas-marcas.module#NossasMarcasPageModule'
   },
-  { 
-    path: 'cadastro-marca', 
-    loadChildren: './cadastro-marca/cadastro-marca.module#CadastroMarcaPageModule' 
+  {
+    path: 'cadastro-marca',
+    loadChildren: './cadastro-marca/cadastro-marca.module#CadastroMarcaPageModule'
   },
-  { 
-    path: 'marca-view', 
-  loadChildren: './marca-view/marca-view.module#MarcaViewPageModule' 
+  {
+    path: 'marca-view',
+    loadChildren: './marca-view/marca-view.module#MarcaViewPageModule'
   },
-  { 
-    path: 'quem', 
-    loadChildren: './quem/quem.module#QuemPageModule' 
+  {
+    path: 'quem',
+    loadChildren: './quem/quem.module#QuemPageModule'
   },
-  { 
-    path: 'inicio', 
-    loadChildren: './inicio/inicio.module#InicioPageModule' 
+  {
+    path: 'inicio',
+    loadChildren: './inicio/inicio.module#InicioPageModule'
   },
-  { 
-    path: 'finaliza-compra', 
-    loadChildren: './finaliza-compra/finaliza-compra.module#FinalizaCompraPageModule' 
+  {
+    path: 'finaliza-compra',
+    loadChildren: './finaliza-compra/finaliza-compra.module#FinalizaCompraPageModule'
   },
-  { 
-    path: 'cadastrar-roupa', 
-    loadChildren: './cadastrar-roupa/cadastrar-roupa.module#CadastrarRoupaPageModule' 
+  {
+    path: 'cadastrar-roupa',
+    loadChildren: './cadastrar-roupa/cadastrar-roupa.module#CadastrarRoupaPageModule'
   },
-  { 
-    path: 'roupas', 
-    loadChildren: './roupas/roupas.module#RoupasPageModule' 
+  {
+    path: 'roupas',
+    loadChildren: './roupas/roupas.module#RoupasPageModule'
   },
-  { 
+  {
     path: 'carrinho',
-    loadChildren: './carrinho/carrinho.module#CarrinhoPageModule' 
-  },  { path: 'roupa-view', loadChildren: './roupa-view/roupa-view.module#RoupaViewPageModule' }
+    loadChildren: './carrinho/carrinho.module#CarrinhoPageModule'
+  },
+  {
+    path: 'roupa-view',
+    loadChildren: './roupa-view/roupa-view.module#RoupaViewPageModule'
+  },
+  {
+    path: 'lacoste',
+    loadChildren: './lacoste/lacoste.module#LacostePageModule'
+  },
+  {
+    path: 'adidas', loadChildren: './adidas/adidas.module#AdidasPageModule'
+  },
+  {
+    path: 'mt-cat',
+    loadChildren: './mt-cat/mt-cat.module#MtCatPageModule'
+  },
+  {
+    path: 'calvin-klein',
+    loadChildren: './calvin-klein/calvin-klein.module#CalvinKleinPageModule'
+  },
+  {
+    path: 'nike',
+    loadChildren: './nike/nike.module#NikePageModule'
+  },
+  {
+    path: 'oaklay',
+    loadChildren: './oaklay/oaklay.module#OaklayPageModule'
+  },
+  {
+    path: 'forever',
+    loadChildren: './forever/forever.module#ForeverPageModule'
+  },
+  {
+    path: 'zara',
+    loadChildren: './zara/zara.module#ZaraPageModule'
+  }
 
 
 
@@ -76,4 +112,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
